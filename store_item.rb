@@ -8,13 +8,14 @@
 class Gummy
 
   attr_reader :color, :price, :flavour, :size
-  attr_writer :price
+  #attr_writer :price
+  attr_accessor :price
 
-  def initialize(input_color, input_price, input_flavour, input_size)
-    @color = input_color
-    @price = input_price
-    @flavour = input_flavour
-    @size = input_size
+  def initialize(input_hash)
+    @color = input_hash[:color]
+    @price = input_hash[:price]
+    @flavour = input_hash[:flavour]
+    @size = input_hash[:size]
   end
 
   # def color
@@ -40,7 +41,7 @@ class Gummy
 end
 
 
-gummy1 = Gummy.new("blue", 5, "ocean", "large")
+gummy1 = Gummy.new({color: "blue", price: 5, flavour: "ocean", size: "large"})
 puts gummy1.color
 puts gummy1.price
 
