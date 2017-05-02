@@ -40,6 +40,15 @@ class Gummy
 
 end
 
+class Food < Gummy
+  attr_accessor :shelflife
+  def initialize (input_hash)
+    super
+    @shelflife = input_hash[:shelflife]
+  end
+end
+
+
 
 gummy1 = Gummy.new({color: "blue", price: 5, flavour: "ocean", size: "large"})
 puts gummy1.color
@@ -49,3 +58,7 @@ gummy1.price = 20
 puts gummy1.price
 
 puts gummy1.size
+
+food = Food.new(color: "blue", price: 5, flavour: "ocean", size: "large", shelflife: 10)
+
+puts food.shelflife

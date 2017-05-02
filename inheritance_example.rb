@@ -1,5 +1,5 @@
 class Vehicle
-  def initialize
+  def initialize(input_hash)
     @speed = 0
     @direction = 'north'
   end
@@ -19,10 +19,11 @@ class Vehicle
 end
 
 class Car < Vehicle
-  # def initialize
-  #   @speed = 0
-  #   @direction = 'north'
-  # end
+  def initialize (input_hash)
+    super
+    @make = input_hash[:make]
+    @model = input_hash[:model]
+  end
 
   # def brake
   #   @speed = 0
@@ -42,10 +43,11 @@ class Car < Vehicle
 end
 
 class Bike < Vehicle
-  # def initialize
-  #   @speed = 0
-  #   @direction = 'north'
-  # end
+  def initialize (input_hash)
+    super
+    @brand = input_hash[:brand]
+    @type = input_hash[:type]
+  end
 
   # def brake
   #   @speed = 0
@@ -65,8 +67,8 @@ class Bike < Vehicle
 end
 
 
-bike1 = Bike.new
-car1 = Car.new
+bike1 = Bike.new(brand: "yamaha",type: "cool")
+car1 = Car.new(make: "subadu",model: "odessy")
 
 bike1.ring_bell
 car1.honk_horn
