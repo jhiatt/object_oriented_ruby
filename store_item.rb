@@ -7,6 +7,9 @@
 
 class Gummy
 
+  attr_reader :color, :price, :flavour, :size
+  attr_writer :price
+
   def initialize(input_color, input_price, input_flavour, input_size)
     @color = input_color
     @price = input_price
@@ -14,21 +17,21 @@ class Gummy
     @size = input_size
   end
 
-  def color
-    @color
-  end
+  # def color
+  #   @color
+  # end
 
-  def price
-    @price
-  end
+  # def price
+  #   @price
+  # end
 
-  def flavour
-    @flavour
-  end
+  # def flavour
+  #   @flavour
+  # end
 
-  def size
-    @size
-  end
+  # def size
+  #   @size
+  # end
 
   def price=(new_price)
     @price = new_price
